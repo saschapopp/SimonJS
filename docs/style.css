@@ -11,11 +11,6 @@ body {
     text-align: center;
 }
 
-#topBtn, #bottomBtn {
-    display: flex;
-    pointer-events: none;
-}
-
 #redBtn, #blueBtn, #greenBtn, #yellowBtn {
     border: none;
     height: 25%;
@@ -28,56 +23,28 @@ body {
 #redBtn {
     top: 24.5%;
     left: 9%;
-    background: red;
-    border-radius: 150px 30px 30px 30px;    
-}
-
-#redBtn:active {
-    top: 24.5%;
-    left: 9%;
-    background: black;
+    background: darkred;
     border-radius: 150px 30px 30px 30px;    
 }
 
 #blueBtn {
     top: 24.5%;
     right: 9%;
-    background: blue;
-    border-radius: 30px 150px 30px 30px;
-}
-
-#blueBtn:active {
-    top: 24.5%;
-    right: 9%;
-    background: black;
+    background: darkblue;
     border-radius: 30px 150px 30px 30px;
 }
 
 #greenBtn {
     bottom: 24.5%;
     left: 9%;
-    background: green;
-    border-radius: 30px 30px 30px 150px;
-}
-
-#greenBtn:active {
-    bottom: 24.5%;
-    left: 9%;
-    background: black;
+    background: darkgreen;
     border-radius: 30px 30px 30px 150px;
 }
 
 #yellowBtn {
     bottom: 24.5%;
     right: 9%;
-    background: yellow;
-    border-radius: 30px 30px 150px 30px;
-}
-
-#yellowBtn:active {
-    bottom: 24.5%;
-    right: 9%;
-    background: black;
+    background: goldenrod;
     border-radius: 30px 30px 150px 30px;
 }
 
@@ -92,17 +59,6 @@ body {
     margin-left: 30%;
     margin-right: 30%;
     border-radius: 30px;
-    pointer-events: none;
     color: black;
     font-size: 1.5em;
-
-}
-
-#startBtn:active {
-    background: black;
-    color: grey;
-}
-
-.act {
-    opacity: 0;
 }
