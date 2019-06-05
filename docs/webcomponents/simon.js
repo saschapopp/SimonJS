@@ -5,6 +5,7 @@ export class simonGame extends HTMLElement {
         super();    
         this.attachShadow({ mode: 'open' });
 
+        this.rounds = 5;
         this.sequence = [];
         this.playerSequence = []
         this.command;
@@ -52,7 +53,7 @@ export class simonGame extends HTMLElement {
                 this.blueButton.style.backgroundColor = "lightblue";
                 if(!this.win) {
                     setTimeout(() => {
-                        clearColor();
+                        this.clearColor();
                     }, 300)
                 }
             }
@@ -65,7 +66,7 @@ export class simonGame extends HTMLElement {
                 this.greenButton.style.backgroundColor = "lightgreen";
                 if(!this.win) {
                     setTimeout(() => {
-                        clearColor();
+                        this.clearColor();
                     }, 300)
                 }
             }
@@ -78,7 +79,7 @@ export class simonGame extends HTMLElement {
                 this.yellowButton.style.backgroundColor = "yellow";
                 if(!this.win) {
                     setTimeout(() => {
-                        clearColor();
+                        this.clearColor();
                     }, 300)
                 }
             }
@@ -115,7 +116,7 @@ export class simonGame extends HTMLElement {
             this.sequence.push(Math.floor(Math.random() * 4) + 1);
         }
         this.compTurn = true;
-        this.sequenceId = setInterval(this.gameTurn, 800);
+        this.sequenceId = setInterval( () => this.gameTurn(), 800);
     };
 
     gameTurn() {
@@ -124,12 +125,12 @@ export class simonGame extends HTMLElement {
         if (this.command == this.playerTurn) {
             clearInterval(this.sequenceId);
             this.compTurn = false;
-            clearColor();
+            this.clearColor();
             this.on = true;
         }
 
         if (this.compTurn) {
-            clearColor();
+            this.clearColor();
             setTimeout(() => {
                 if (this.sequence[this.command] == 1) {
                     this.redButton.style.backgroundColor = "tomato";
@@ -152,7 +153,7 @@ export class simonGame extends HTMLElement {
         if (this.playerSequence[this.playerSequence.length - 1] !== this.sequence[this.playerSequence.length - 1])
         this.state = false;
 
-        if (this.playerSequence.length == 20 && state) {
+        if (this.playerSequence.length == this.rounds && this.state) {
             this.winGame();
         }
 
@@ -169,7 +170,7 @@ export class simonGame extends HTMLElement {
             this.playerSequence = [];
             this.compTurn = true;
             this.command = 0;
-            this.sequenceId = setInterval(this.gameTurn, 800);
+            this.sequenceId = setInterval( () => this.gameTurn(), 800);
         }
     }
 
@@ -184,8 +185,87 @@ export class simonGame extends HTMLElement {
 
     render() {
         this.shadowRoot.innerHTML =`
-            <link rel="stylesheet" href="webcomponents/simon.css"></link>
-            <main id="game">
+            
+        <style>
+        #gameState {
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            background-color: none;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 25px;
+        }
+        #redBtn,
+        #blueBtn,
+        #greenBtn,
+        #yellowBtn {
+            border: none;
+            height: 25%;
+            width: 40%;
+            position: absolute;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #redBtn {
+            top: 24.5%;
+            left: 9%;
+            background: darkred;
+            border-radius: 150px 30px 30px 30px;
+        }
+
+        #blueBtn {
+            top: 24.5%;
+            right: 9%;
+            background: darkblue;
+            border-radius: 30px 150px 30px 30px;
+        }
+
+        #greenBtn {
+            bottom: 24.5%;
+            left: 9%;
+            background: darkgreen;
+            border-radius: 30px 30px 30px 150px;
+        }
+
+        #yellowBtn {
+            bottom: 24.5%;
+            right: 9%;
+            background: goldenrod;
+            border-radius: 30px 30px 150px 30px;
+        }
+
+        #startBtn {
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            background: white;
+            text-align: center;
+            border: none;
+            width: 40%;
+            position: absolute;
+            bottom: 10%;
+            margin-left: 30%;
+            margin-right: 30%;
+            border-radius: 30px;
+            color: black;
+            font-size: 1.5em;
+        }
+
+        #startBtn:active {
+            background: black;
+            color: white;
+
+        }
+        #count {
+            font-family: Impact, 'Arial Narrow Bold', sans-serif;
+            background-color: none;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 15px;
+            
+        }
+        </style>
+        <main id="game">
             <div id="gameState">Replay Pattern</div>
             <div id="btns">
                 <div class="btns" id="redBtn"></div>
@@ -200,3 +280,4 @@ export class simonGame extends HTMLElement {
         `;
     }
 }
+//window.customElements.define('simon-game', simonGame);
