@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="ew">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/style.css" rel="stylesheet">
     <title>Simon Game Progressive Web App</title>
     <link rel="stylesheet" href="style.css">
 </head>
     <body>
-        <div id="game">
-                <div id="gameState">Replay</div>
-                <div id="btns">
-                    <div class="btn" id="redBtn"></div>
-                    <div class="btn" id="blueBtn"></div>
-                    <div class="btn" id="greenBtn"></div>
-                    <div class="btn" id="yellowBtn"></div>
-                </div>
-                <div id="controlBtn">
-                    <button class="button" id="startBtn">Start</button>
-                </div>
-            </div>   
+        <simon-game></simon-game>
+        <script async src="app.js" type="module"></script>
     </body>
-<script type="text/javascript" src="app.js"></script>
 </html>

@@ -1,0 +1,81 @@
+body {
+    background: #000000;
+    margin: 0;
+}
+
+#gameState {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    background-color: none;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 25px;
+}
+
+#redBtn, #blueBtn, #greenBtn, #yellowBtn {
+    border: none;
+    height: 25%;
+    width: 40%;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+}
+
+#redBtn {
+    top: 24.5%;
+    left: 9%;
+    background: darkred;
+    border-radius: 150px 30px 30px 30px;    
+}
+
+#blueBtn {
+    top: 24.5%;
+    right: 9%;
+    background: darkblue;
+    border-radius: 30px 150px 30px 30px;
+}
+
+#greenBtn {
+    bottom: 24.5%;
+    left: 9%;
+    background: darkgreen;
+    border-radius: 30px 30px 30px 150px;
+}
+
+
+#yellowBtn {
+    bottom: 24.5%;
+    right: 9%;
+    background: goldenrod;
+    border-radius: 30px 30px 150px 30px;
+}
+
+#startBtn {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    background: white;
+    text-align: center;
+    border: none;
+    width: 40%;
+    position: absolute;
+    bottom: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 30px;
+    color: black;
+    font-size: 1.5em;
+
+}
+
+#startBtn:active {
+    background: black;
+    color: white;
+}
+
+#count {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    background-color: none;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 15px;
+} 

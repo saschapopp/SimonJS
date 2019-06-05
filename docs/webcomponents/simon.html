@@ -1,0 +1,35 @@
+<template>
+    <style>
+        @import url('simongame.css');  
+    </style>
+<body>
+    <main id="game">
+        <div id="gameState">Replay Pattern</div>
+        <div id="btns">
+            <div class="btns" id="redBtn"></div>
+            <div class="btns" id="blueBtn"></div>
+            <div class="btns" id="greenBtn"></div>
+            <div class="btns" id="yellowBtn"></div>
+        </div>
+        <div id="controlBtns">
+            <button class="button" id="startBtn">Start</button>
+        </div>
+    </main>  
+    </body>
+</template>    
+    <script>
+    (function(){
+        var thisDoc = document.currentScript.ownerDocument;
+        var thatDoc = document;
+        var template = thisDoc.querySelector('template');
+        var Element = Object.create(HTMLElement.prototype);
+        var shadowRoot;
+        Element.createdCallback = function() {
+            shadowRoot = this.createShadowRoot();
+            var clone = thatDoc.importNode(template.content, true);
+            shadowRoot.appendChild(clone);
+            
+    }
+    thatDoc.registerElement('simon-game', {prototype:Element});
+})()
+</script>
