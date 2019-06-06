@@ -5,7 +5,7 @@ export class simonGame extends HTMLElement {
         super();    
         this.attachShadow({ mode: 'open' });
 
-        this.rounds = 5;
+        this.rounds = 8;
         this.sequence = [];
         this.playerSequence = []
         this.command;
@@ -160,7 +160,7 @@ export class simonGame extends HTMLElement {
         if (this.state == false) {
             this.commandColor();    
             this.on = false;
-            this.turnCounter.innerHTML = "Congratulations, you did " + this.playerTurn + " turns!";
+            this.turnCounter.innerHTML = "Congratulations, you scored " + this.playerTurn + "!";
             this.startButton.disabled = false;
             this.startButton.style.backgroundColor = "white";    
         }
@@ -176,7 +176,7 @@ export class simonGame extends HTMLElement {
 
     winGame() {
         this.commandColor();
-        this.turnCounter.innerHTML = "You Won!";
+        this.turnCounter.innerHTML = "Congratulations, you won the game!";
         this.on = false;
         this.win = true;
         this.startButton.disabled = false;
