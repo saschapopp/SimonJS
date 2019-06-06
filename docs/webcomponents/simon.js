@@ -267,7 +267,7 @@ export class simonGame extends HTMLElement {
         </style>
         <main id="game">
             <div id="gameState">Replay Pattern</div>
-            <div id="btns">
+            <div id="btn">
                 <div class="btn" id="redBtn"></div>
                 <div class="btn" id="blueBtn"></div>
                 <div class="btn" id="greenBtn"></div>
