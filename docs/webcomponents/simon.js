@@ -160,7 +160,7 @@ export class simonGame extends HTMLElement {
         if (this.state == false) {
             this.commandColor();    
             this.on = false;
-            this.turnCounter.innerHTML = "Congratulations, you scored " + this.playerTurn + "!";
+            this.turnCounter.innerHTML = "Congratulations you did" + this.playerTurn + " turns!";
             this.startButton.disabled = false;
             this.startButton.style.backgroundColor = "white";    
         }
