@@ -6,6 +6,7 @@ self.addEventListener('install', (event) => {
                 '/simonJS/',
                 'index.html',
                 'app.js',
+                'manifest.webmanifest',
                 'css/style.css',
                 'webcomponents/simon.css',
                 'webcomponents/simon.html',

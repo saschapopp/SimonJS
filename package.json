@@ -1,0 +1,14 @@
+{
+    "name": "simonGame",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+      "start": "browser-sync start --server ./docs"
+    },
+    "author": "sp",
+    "license": "ISC",
+    "devDependencies": {
+      "browser-sync": "^2.26.5"
+    }
+  }
