@@ -70,5 +70,28 @@ body {
     color: white;
     font-size: 1.5em;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 15px;    
+}
+
+#installprompt {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    z-index: 1;
+    font-style: normal;
+}
+
+#installprompt svg {
+    height: 40px;
+    width: 40px;
+}
+
+svg {
+    width: 25px;
+    margin-right: 20px;
+}
+
+path {
+    fill: #fff;
 }
